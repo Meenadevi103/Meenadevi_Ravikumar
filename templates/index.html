@@ -1,164 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meenadevi Ravikumar - Portfolio</title>
+    <title>Meenadevi Ravikumar | Software Developer | AI & Full-Stack Developer</title>
+    <meta name="description"
+        content="Portfolio of Meenadevi Ravikumar, a software developer building full-stack web applications and AI-powered solutions using Python, Django, Flask and modern web technologies.">
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Meenadevi Ravikumar | Software Developer | AI & Full-Stack Developer">
+    <meta property="og:description"
+        content="Portfolio of Meenadevi Ravikumar, a software developer building full-stack web applications and AI-powered solutions using Python, Django, Flask and modern web technologies.">
+    <meta property="og:type" content="website">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <!-- Google Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container-fluid px-5">
-            <a class="navbar-brand" href="#home">Portfolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-xl fixed-top glass-nav" id="navbar">
+        <div class="container-fluid px-4 px-md-5">
+            <a class="navbar-brand fw-bold" href="#home">
+                <span class="text-primary">&lt;</span>Meena<span class="text-primary">/&gt;</span>
+            </a>
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#education">Education</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
+                <div class="nav-actions d-flex align-items-center gap-3 mt-3 mt-xl-0">
+                    <a href="https://github.com/Meenadevi103" target="_blank" class="nav-icon"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/meenadeviravikumar/?skipRedirect=true" target="_blank"
+                        class="nav-icon"><i class="fab fa-linkedin"></i></a>
+                    <button class="btn theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="hero-left">
-            <div class="hero-content">
-                <span class="hero-subtitle">HELLO</span>
-                <h1 class="hero-title">I'm Meenadevi<br>Ravikumar</h1>
-                <p class="hero-description">Creative Web Developer in the making, dedicated to crafting responsive and
-                    modern web applications.</p>
-                <div class="hero-buttons">
-                    <a href="#about" class="btn-primary-hero">MORE ABOUT ME</a>
-                    <a href="{{ url_for('static', filename='resume.pdf') }}" class="btn-secondary-hero">GET MY CV</a>
+    <section id="home" class="hero-section d-flex align-items-center">
+        <div class="container relative-z">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7 hero-content reveal-left">
+                    <div class="badge-accent mb-3 d-inline-block">👋 Hello, World!</div>
+                    <h1 class="hero-title fw-bold">I'm <span class="text-gradient">Meenadevi Ravikumar</span></h1>
+                    <h2 class="hero-subtitle mb-4">Full Stack Developer | <span class="d-inline-block">AI
+                            Enthusiast</span></h2>
+                    <p class="hero-description lead mb-5">Building practical software and AI-powered solutions.
+                        Passionate about turning complex problems into elegant, scalable web applications.</p>
+
+                    <div class="hero-buttons d-flex flex-wrap gap-3">
+                        <a href="#projects" class="btn btn-primary-custom">View Projects <i
+                                class="fas fa-arrow-right ms-2"></i></a>
+                        <a href="{{ url_for('static', filename='resume.pdf') }}" download
+                            class="btn btn-outline-custom"><i class="fas fa-download ms-2"></i> Download Resume</a>
+                    </div>
+
+                    <div class="hero-social-links mt-5 d-flex gap-4">
+                        <a href="https://github.com/Meenadevi103" target="_blank" class="social-link"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/meenadeviravikumar/?skipRedirect=true" target="_blank"
+                            class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-5 position-relative reveal-right">
+                    <div class="hero-image-wrapper">
+                        <div class="blob-shape"></div>
+                        <img src="{{ url_for('static', filename='assets/about/my_photo.jpeg') }}"
+                            alt="Meenadevi Ravikumar" class="hero-image img-fluid rounded-4 shadow-lg">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="hero-right">
-            <div class="hero-image-overlay"></div>
-            <img src="{{ url_for('static', filename='assets/about/my_photo.jpeg') }}" alt="Meenadevi"
-                class="hero-image">
-        </div>
-
-        <!-- Social Sidebar -->
-        <div class="social-sidebar">
-            <a href="https://www.linkedin.com/in/meenadevi-ravikumar-816831250" target="_blank"
-                rel="noopener noreferrer" class="social-icon">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/Meenadevi103/" target="_blank" rel="noopener noreferrer" class="social-icon">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="mailto:meenadeviravikumar@gmail.com" class="social-icon">
-                <i class="fas fa-envelope"></i>
-            </a>
-            <!-- <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="social-icon">
-                <i class="fab fa-twitter"></i>
-            </a> -->
-            <a href="https://www.instagram.com/_me_e_na__?igsh=YTgxZHo4ZzN6cmVl" target="_blank"
-                rel="noopener noreferrer" class="social-icon">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <div class="scroll-indicator"></div>
-            <div class="scroll-icon-wrapper">
-                <i class="fas fa-chevron-down scroll-icon"></i>
-            </div>
+        <div class="scroll-down-indicator">
+            <a href="#about"><i class="fas fa-chevron-down"></i></a>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="row">
-                <!-- Left Column: About Me -->
-                <div class="col-lg-6 about-left">
-                    <div class="info-box">
-                        <h2 class="about-title">About me</h2>
-                        <p class="about-description">
-                            I am a passionate MCA student and aspiring full-stack web developer with hands-on experience
-                            in building web applications using modern technologies. I enjoy learning new tools, solving
-                            real-world problems, and continuously improving my technical and creative skills. I have
-                            experience working with both frontend and backend development, and I am comfortable building
-                            responsive, user-friendly interfaces. I am a quick learner, a team player, and I enjoy
-                            turning ideas into functional digital solutions. I am eager to gain real-world industry
-                            experience and contribute to meaningful projects while growing as a software professional.
-                        </p>
-                        <a href="{{ url_for('static', filename='resume.pdf') }}" download
-                            class="btn-small-hero">Download
-                            CV</a>
-                    </div>
-                </div>
-
-                <!-- Right Column: Education Timeline -->
-                <div class="col-lg-6 about-right" id="education">
-                    <div class="info-box">
-                        <h3 class="education-title">Education</h3>
-                        <div class="timeline">
-                            <!-- MCA -->
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="timeline-date">2025 - Present</div>
-                                    <h4 class="timeline-degree">MCA</h4>
-                                    <p class="timeline-school">Rajagiri College of Social Sciences, Kalamassery</p>
-                                </div>
+    <section id="about" class="about-section py-section">
+        <div class="container reveal-up">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">About Me</h2>
+                <div class="divider mx-auto"></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="glass-card p-4 p-md-5 rounded-4">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-md-4 text-center">
+                                <img src="{{ url_for('static', filename='assets/about/my_photo.jpeg') }}"
+                                    alt="Meenadevi" class="img-fluid rounded-circle about-avatar shadow">
                             </div>
-
-                            <!-- BCA -->
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="timeline-header">
-                                        <div class="timeline-date">2022 - 2025</div>
-                                        <span class="grade-badge">81.3%</span>
-                                    </div>
-                                    <h4 class="timeline-degree">BCA</h4>
-                                    <p class="timeline-school">Nirmala College, Muvattupuzha</p>
-                                </div>
-                            </div>
-
-                            <!-- Higher Secondary -->
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <div class="timeline-header">
-                                        <div class="timeline-date">Higher Secondary</div>
-                                        <span class="grade-badge">94.5%</span>
-                                    </div>
-                                    <h4 class="timeline-degree">12th Grade</h4>
-                                    <p class="timeline-school">St. Mary's HSS, Murickassery</p>
+                            <div class="col-md-8">
+                                <p class="lead mb-3">I am a Software Developer with a strong focus on <strong>Full-Stack
+                                        Web Development</strong>, <strong>Python</strong>, <strong>Django</strong>, and
+                                    <strong>Generative AI</strong>.</p>
+                                <p class="mb-4 text-muted-custom">I thrive on turning ideas into functional applications
+                                    and continuously improving my technical skills. Whether it's building robust
+                                    backends, crafting responsive frontends, or integrating cutting-edge AI models, I
+                                    enjoy building practical applications that solve real problems. I am eager to learn
+                                    new technologies and apply them to create impactful solutions.</p>
+                                <div class="d-flex flex-wrap gap-3 mt-3">
+                                    <div class="about-highlight"><i class="fas fa-laptop-code text-primary me-2"></i>
+                                        Software Dev</div>
+                                    <div class="about-highlight"><i class="fas fa-server text-primary me-2"></i> Backend
+                                        (Python/Django)</div>
+                                    <div class="about-highlight"><i class="fas fa-brain text-primary me-2"></i> AI &
+                                        GenAI</div>
                                 </div>
                             </div>
                         </div>
@@ -168,135 +142,105 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section">
-        <div class="container">
-            <h2 class="skills-title">Skills</h2>
-            <div class="skills-grid">
-                <!-- React -->
-                <!-- <div class="skill-card">
-                    <img src="{{ url_for('static', filename='assets/atom.png') }}" alt="React" class="skill-icon">
-                    <div class="skill-name">React</div>
-                    <div class="skill-rating">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot-inactive"></span>
-                    </div>
-                </div> -->
+    <!-- Google Student Ambassador Section -->
+    <section id="ambassador" class="ambassador-section py-section bg-alt">
+        <div class="container reveal-up">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Google Student Ambassador</h2>
+                <div class="divider mx-auto"></div>
+                <p class="section-subtitle mt-3">Leadership, Community Building & Tech Advocacy</p>
+            </div>
 
-                <!-- Java -->
-                <div class="skill-card">
-                    <img src="{{ url_for('static', filename='assets/java.png') }}" alt="Java" class="skill-icon">
-                    <div class="skill-name">Java</div>
-                    <div class="skill-rating">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </div>
-                </div>
-
-                <!-- HTML -->
-                <div class="skill-card">
-                    <img src="{{ url_for('static', filename='assets/html.png') }}" alt="HTML" class="skill-icon">
-                    <div class="skill-name">HTML</div>
-                    <div class="skill-rating">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot-inactive"></span>
-                    </div>
-                </div>
-
-                <!-- CSS -->
-                <div class="skill-card">
-                    <img src="{{ url_for('static', filename='assets/css-3.png') }}" alt="CSS" class="skill-icon">
-                    <div class="skill-name">CSS</div>
-                    <div class="skill-rating">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot-inactive"></span>
-                        <span class="dot-inactive"></span>
-                    </div>
-                </div>
-
-                <!-- Python -->
-                <div class="skill-card">
-                    <img src="{{ url_for('static', filename='assets/python.png') }}" alt="Python" class="skill-icon">
-                    <div class="skill-name">Python</div>
-                    <div class="skill-rating">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot-inactive"></span>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="gsa-card rounded-4 p-4 p-md-5 position-relative overflow-hidden shadow-lg">
+                        <div class="gsa-bg-accent"></div>
+                        <div class="row align-items-center position-relative z-1">
+                            <div class="col-md-4 text-center mb-4 mb-md-0">
+                                <div class="gsa-badge-wrapper mx-auto overflow-hidden bg-white">
+                                    <img src="{{ url_for('static', filename='assets/gsa.jpg') }}"
+                                        alt="Google Student Ambassador" class="img-fluid w-100 h-100 object-fit-cover">
+                                </div>
+                                <h3 class="fw-bold mt-3">Ambassador 2026</h3>
+                            </div>
+                            <div class="col-md-8 pl-md-4">
+                                <ul class="gsa-list list-unstyled">
+                                    <li class="mb-3 d-flex align-items-start gsa-list-item">
+                                        <i class="fas fa-check-circle text-success mt-1 me-3 fs-5"></i>
+                                        <div>
+                                            <strong>Conducted an AI Community Session</strong>
+                                            <p class="text-muted-custom small mb-0">Led an engaging session focusing on
+                                                artificial intelligence and its practical applications.</p>
+                                        </div>
+                                    </li>
+                                    <li class="mb-3 d-flex align-items-start gsa-list-item">
+                                        <i class="fas fa-check-circle text-success mt-1 me-3 fs-5"></i>
+                                        <div>
+                                            <strong>Conducted Interviews</strong>
+                                            <p class="text-muted-custom small mb-0">Conducted interviews, asking them
+                                                about how they approach and deal with AI and their understanding of
+                                                AI-related topics. Also introduced candidates to some useful Google
+                                                Gemini features during the interaction.</p>
+                                        </div>
+                                    </li>
+                                    <li class="mb-3 d-flex align-items-start gsa-list-item">
+                                        <i class="fas fa-check-circle text-success mt-1 me-3 fs-5"></i>
+                                        <div>
+                                            <strong>Digital Content Creation</strong>
+                                            <p class="text-muted-custom small mb-0">Created and shared digital content
+                                                to engage with students and technology communities.</p>
+                                        </div>
+                                    </li>
+                                    <li class="mb-0 d-flex align-items-start gsa-list-item">
+                                        <i class="fas fa-check-circle text-success mt-1 me-3 fs-5"></i>
+                                        <div>
+                                            <strong>Community Engagement</strong>
+                                            <p class="text-muted-custom small mb-0">Actively participated in Google Meet
+                                                activities and student/community interactions, strengthening
+                                                communication, collaboration and leadership skills.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- PHP -->
-                <div class="skill-card">
-                    <img src="{{ url_for('static', filename='assets/php.png') }}" alt="PHP" class="skill-icon">
-                    <div class="skill-name">PHP</div>
-                    <div class="skill-rating">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot-inactive"></span>
-                        <span class="dot-inactive"></span>
-                    </div>
-                </div>
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section py-section">
+        <div class="container reveal-up">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Experience</h2>
+                <div class="divider mx-auto"></div>
+            </div>
 
-                <!-- C -->
-                <div class="skill-card">
-                    <img src="{{ url_for('static', filename='assets/letter-c.png') }}" alt="C" class="skill-icon">
-                    <div class="skill-name">C</div>
-                    <div class="skill-rating">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot-inactive"></span>
-                    </div>
-                </div>
-
-                <!-- C++ -->
-                <div class="skill-card">
-                    <img src="{{ url_for('static', filename='assets/c.png') }}" alt="C++" class="skill-icon">
-                    <div class="skill-name">C++</div>
-                    <div class="skill-rating">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot-inactive"></span>
-                        <span class="dot-inactive"></span>
-                    </div>
-                </div>
-
-                <!-- Photoshop -->
-                <div class="skill-card">
-                    <img src="{{ url_for('static', filename='assets/photoshop.png') }}" alt="Photoshop"
-                        class="skill-icon">
-                    <div class="skill-name">Photoshop</div>
-                    <div class="skill-rating">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot-inactive"></span>
-                        <span class="dot-inactive"></span>
+            <div class="timeline-container">
+                <!-- Experience Item 1 -->
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-dot"></div>
+                    <div
+                        class="timeline-content glass-card p-4 rounded-4 shadow-sm border-accent-subtle experience-card">
+                        <div class="d-flex justify-content-between align-items-md-center flex-column flex-md-row mb-2">
+                            <h3 class="fw-bold mb-1">Software Developer Intern</h3>
+                            <span class="badge bg-primary-soft text-primary px-3 py-2 rounded-pill mt-2 mt-md-0">April
+                                2026 – May 2026</span>
+                        </div>
+                        <h5 class="text-muted-custom mb-3"><a href="https://www.linkedin.com/company/nordvio-tech/"
+                                target="_blank" class="text-decoration-none text-primary hover-opacity">Nordvio Tech <i
+                                    class="fas fa-external-link-alt ms-1 small"></i></a></h5>
+                        <p class="mb-3">Worked as part of a development team to build and improve an Agentic AI
+                            solution.</p>
+                        <h6 class="fw-semibold">Experience Highlights:</h6>
+                        <ul class="text-muted-custom small ps-3 mb-0">
+                            <li class="mb-1">Worked as a team and collaborated with members during development.</li>
+                            <li class="mb-1">Contributed to building, improving, and refining an Agentic AI solution.
+                            </li>
+                            <li class="mb-1">Gained practical software development experience in a professional team
+                                environment.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -304,67 +248,333 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-        <div class="container">
-            <h2 class="projects-title">Projects</h2>
-            <div class="projects-grid">
-                <!-- Project 1: MiniMart -->
-                <div class="project-card">
-                    <div class="project-img-box">
-                        <img src="{{ url_for('static', filename='assets/pr2.jpg') }}" alt="MiniMart Project"
-                            class="project-img">
-                    </div>
-                    <h3 class="project-title">MiniMart</h3>
-                    <p class="project-description">A B2B application that enables efficient interaction between local
-                        sellers and buyers.</p>
-                    <ul class="project-skills">
-                        <li class="project-skill">React</li>
-                        <li class="project-skill">Django</li>
-                        <li class="project-skill">PostgreSQL</li>
-                    </ul>
-                    <div class="project-links">
-                        <!-- <a href="https://your-demo-site.com" class="project-link">Demo</a> -->
-                        <a href="https://github.com/Meenadevi103/Main_project" class="project-link">Source</a>
+    <section id="projects" class="projects-section py-section bg-alt">
+        <div class="container reveal-up">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="divider mx-auto"></div>
+            </div>
+
+            <!-- Filters -->
+            <div class="project-filters text-center mb-5 d-flex flex-wrap justify-content-center gap-2">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ai">AI / GenAI</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="django">Django</button>
+                <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+                <button class="filter-btn" data-filter="other">Other</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="row g-4" id="projects-grid">
+
+                <!-- Project 1: AI-Powered Desktop Assistant -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="ai python">
+                    <div class="project-card h-100 rounded-4 overflow-hidden shadow">
+                        <div class="project-img-wrapper d-flex align-items-center justify-content-center">
+                            <img src="{{ url_for('static', filename='assets/desktop_assistant.jpg') }}"
+                                alt="AI Desktop Assistant" class="img-fluid w-100 h-100 object-fit-cover">
+                            <div class="project-overlay">
+                                <button class="btn btn-light rounded-pill px-4 fw-bold shadow view-project-btn"
+                                    data-bs-toggle="modal" data-bs-target="#projectModal1">View Details</button>
+                            </div>
+                        </div>
+                        <div class="project-info p-4">
+                            <h3 class="project-title h5 fw-bold">AI-Powered Desktop Assistant</h3>
+                            <p class="project-short-desc text-muted-custom small">An AI-powered desktop assistant for
+                                voice-driven and intelligent desktop interactions.</p>
+                            <div class="project-tech d-flex flex-wrap gap-2 mt-3">
+                                <span class="badge-tech">Python</span>
+                                <span class="badge-tech">AI / LLM</span>
+                                <span class="badge-tech">Voice</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Project 2: Final ATC -->
-                <div class="project-card">
-                    <div class="project-img-box">
-                        <img src="{{ url_for('static', filename='assets/pr1.png') }}" alt="Final ATC Project"
-                            class="project-img">
-                    </div>
-                    <h3 class="project-title">Final ATC</h3>
-                    <p class="project-description">A digital platform designed to provide streamlined access to temple
-                        information and services.</p>
-                    <ul class="project-skills">
-                        <li class="project-skill">PHP</li>
-                        <li class="project-skill">MySQL</li>
-                        <li class="project-skill">HTML</li>
-                        <li class="project-skill">CSS</li>
-                    </ul>
-                    <div class="project-links">
-                        <!-- <a href="https://your-demo-site.com" class="project-link">Demo</a> -->
-                        <a href="https://github.com/Meenadevi103/final-ATC" class="project-link">Source</a>
+                <!-- Project 2: QBank -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="django fullstack web python">
+                    <div class="project-card h-100 rounded-4 overflow-hidden shadow">
+                        <div class="project-img-wrapper d-flex align-items-center justify-content-center">
+                            <img src="{{ url_for('static', filename='assets/qbank.png') }}" alt="QBank"
+                                class="img-fluid w-100 h-100 object-fit-cover">
+                            <div class="project-overlay">
+                                <button class="btn btn-light rounded-pill px-4 fw-bold shadow view-project-btn"
+                                    data-bs-toggle="modal" data-bs-target="#projectModal2">View Details</button>
+                            </div>
+                        </div>
+                        <div class="project-info p-4">
+                            <h3 class="project-title h5 fw-bold">QBank</h3>
+                            <p class="project-short-desc text-muted-custom small">Full-stack Question Paper Management
+                                System for academic institutions.</p>
+                            <div class="project-tech d-flex flex-wrap gap-2 mt-3">
+                                <span class="badge-tech">Django</span>
+                                <span class="badge-tech">Python</span>
+                                <span class="badge-tech">JS / Chart.js</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Project 3: Portfolio -->
-                <div class="project-card">
-                    <div class="project-img-box">
-                        <img src="{{ url_for('static', filename='assets/about/my_photo.jpeg') }}"
-                            alt="Portfolio Website" class="project-img">
+                <!-- Project 3: E-Hospitality -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="django fullstack web python">
+                    <div class="project-card h-100 rounded-4 overflow-hidden shadow">
+                        <div class="project-img-wrapper d-flex align-items-center justify-content-center">
+                            <img src="{{ url_for('static', filename='assets/ehospital.png') }}" alt="E-Hospitality"
+                                class="img-fluid w-100 h-100 object-fit-cover">
+                            <div class="project-overlay">
+                                <button class="btn btn-light rounded-pill px-4 fw-bold shadow view-project-btn"
+                                    data-bs-toggle="modal" data-bs-target="#projectModal3">View Details</button>
+                            </div>
+                        </div>
+                        <div class="project-info p-4">
+                            <h3 class="project-title h5 fw-bold">E-Hospitality</h3>
+                            <p class="project-short-desc text-muted-custom small">Hospital management web app connecting
+                                patients, doctors, and admins.</p>
+                            <div class="project-tech d-flex flex-wrap gap-2 mt-3">
+                                <span class="badge-tech">Django</span>
+                                <span class="badge-tech">Bootstrap</span>
+                                <span class="badge-tech">SQLite</span>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="project-title">Portfolio</h3>
-                    <p class="project-description">My personal portfolio website built with HTML, CSS, and Bootstrap to
-                        showcase my skills and projects.</p>
-                    <ul class="project-skills">
-                        <li class="project-skill">HTML</li>
-                        <li class="project-skill">CSS</li>
-                        <li class="project-skill">Bootstrap</li>
-                    </ul>
-                    <div class="project-links">
-                        <a href="https://github.com/Meenadevi103/portfolio" class="project-link">Source</a>
+                </div>
+
+                <!-- Project 4: AI-Powered Web Assistant -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="ai web fullstack python">
+                    <div class="project-card h-100 rounded-4 overflow-hidden shadow border-accent">
+                        <div class="project-badge">Featured</div>
+                        <div class="project-img-wrapper gradient-bg-4 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-comments project-placeholder-icon"></i>
+                            <div class="project-overlay">
+                                <button class="btn btn-light rounded-pill px-4 fw-bold shadow view-project-btn"
+                                    data-bs-toggle="modal" data-bs-target="#projectModal4">View Details</button>
+                            </div>
+                        </div>
+                        <div class="project-info p-4">
+                            <h3 class="project-title h5 fw-bold">AI Web Assistant</h3>
+                            <p class="project-short-desc text-muted-custom small">Conversational assistant built with
+                                Flask and Gemini AI, shipped as a custom PyPI package.</p>
+                            <div class="project-tech d-flex flex-wrap gap-2 mt-3">
+                                <span class="badge-tech">Flask</span>
+                                <span class="badge-tech">Gemini AI</span>
+                                <span class="badge-tech">PyPI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Mini Mart -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="fullstack web django python">
+                    <div class="project-card h-100 rounded-4 overflow-hidden shadow">
+                        <div class="project-img-wrapper d-flex align-items-center justify-content-center">
+                            <img src="{{ url_for('static', filename='assets/pr2.jpg') }}"
+                                class="img-fluid w-100 h-100 object-fit-cover" alt="Mini Mart">
+                            <div class="project-overlay">
+                                <button class="btn btn-light rounded-pill px-4 fw-bold shadow view-project-btn"
+                                    data-bs-toggle="modal" data-bs-target="#projectModal5">View Details</button>
+                            </div>
+                        </div>
+                        <div class="project-info p-4">
+                            <h3 class="project-title h5 fw-bold">Mini Mart</h3>
+                            <p class="project-short-desc text-muted-custom small">A B2B application that enables
+                                efficient interaction between local sellers and buyers.</p>
+                            <div class="project-tech d-flex flex-wrap gap-2 mt-3">
+                                <span class="badge-tech">Django</span>
+                                <span class="badge-tech">React</span>
+                                <span class="badge-tech">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section py-section">
+        <div class="container reveal-up">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="divider mx-auto"></div>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <!-- Programming -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-category-card glass-card h-100 p-4 rounded-4 shadow-sm skill-interactive">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="skill-icon-box bg-primary-soft text-primary rounded-circle me-3">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h4 class="fw-bold mb-0">Programming</h4>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="skill-badge tech-interactive"><i class="fab fa-python text-warning me-1"></i>
+                                Python</span>
+                            <span class="skill-badge tech-interactive"><i class="fab fa-java text-danger me-1"></i>
+                                Java</span>
+                            <span class="skill-badge tech-interactive">C / C++</span>
+                            <span class="skill-badge tech-interactive"><i class="fab fa-js text-warning me-1"></i>
+                                JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Development -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-category-card glass-card h-100 p-4 rounded-4 shadow-sm skill-interactive">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="skill-icon-box bg-info-soft text-info rounded-circle me-3">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h4 class="fw-bold mb-0">Web</h4>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="skill-badge tech-interactive"><i class="fab fa-html5 text-danger me-1"></i>
+                                HTML5</span>
+                            <span class="skill-badge tech-interactive"><i class="fab fa-css3-alt text-primary me-1"></i>
+                                CSS3</span>
+                            <span class="skill-badge tech-interactive"><i class="fab fa-js text-warning me-1"></i>
+                                JavaScript</span>
+                            <span class="skill-badge tech-interactive"><i class="fab fa-bootstrap text-purple me-1"></i>
+                                Bootstrap 5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-category-card glass-card h-100 p-4 rounded-4 shadow-sm skill-interactive">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="skill-icon-box bg-success-soft text-success rounded-circle me-3">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h4 class="fw-bold mb-0">Backend</h4>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="skill-badge tech-interactive">Django</span>
+                            <span class="skill-badge tech-interactive">Flask</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Database -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-category-card glass-card h-100 p-4 rounded-4 shadow-sm skill-interactive">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="skill-icon-box bg-warning-soft text-warning rounded-circle me-3">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h4 class="fw-bold mb-0">Database</h4>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="skill-badge tech-interactive">PostgreSQL</span>
+                            <span class="skill-badge tech-interactive">MySQL</span>
+                            <span class="skill-badge tech-interactive">SQLite</span>
+                            <span class="skill-badge tech-interactive">Oracle</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI -->
+                <div class="col-md-6 col-lg-4">
+                    <div
+                        class="skill-category-card glass-card h-100 p-4 rounded-4 shadow-sm border-accent-subtle skill-interactive">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="skill-icon-box bg-purple-soft text-purple rounded-circle me-3">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h4 class="fw-bold mb-0">AI & GenAI</h4>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="skill-badge tech-interactive">Google Gemini</span>
+                            <span class="skill-badge tech-interactive">Generative AI</span>
+                            <span class="skill-badge tech-interactive">LLM Integration</span>
+                            <span class="skill-badge tech-interactive">AI APIs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-category-card glass-card h-100 p-4 rounded-4 shadow-sm skill-interactive">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="skill-icon-box bg-danger-soft text-danger rounded-circle me-3">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h4 class="fw-bold mb-0">Tools</h4>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="skill-badge tech-interactive"><i class="fab fa-git-alt text-danger me-1"></i>
+                                Git</span>
+                            <span class="skill-badge tech-interactive"><i class="fab fa-github me-1"></i> GitHub</span>
+                            <span class="skill-badge tech-interactive"><i class="fas fa-code text-info me-1"></i> VS
+                                Code</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Android -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="skill-category-card glass-card h-100 p-4 rounded-4 shadow-sm skill-interactive">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="skill-icon-box bg-success-soft text-success rounded-circle me-3">
+                                <i class="fab fa-android"></i>
+                            </div>
+                            <h4 class="fw-bold mb-0">Android</h4>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="skill-badge tech-interactive">Android Studio</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section py-section bg-alt">
+        <div class="container reveal-up">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Education</h2>
+                <div class="divider mx-auto"></div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="edu-timeline">
+
+                        <div
+                            class="edu-item p-4 glass-card rounded-4 mb-4 shadow-sm position-relative border-left-primary">
+                            <div class="edu-date badge bg-primary text-white mb-2">2025 - Present</div>
+                            <h4 class="fw-bold mb-1">Master of Computer Applications (MCA)</h4>
+                            <h6 class="text-primary fw-semibold mb-2">Rajagiri College of Social Sciences, Kalamassery
+                            </h6>
+                        </div>
+
+                        <div
+                            class="edu-item p-4 glass-card rounded-4 mb-4 shadow-sm position-relative border-left-secondary">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div class="edu-date badge bg-secondary text-white">2022 - 2025</div>
+                                <div class="fw-bold text-muted-custom small">Score: 81.3%</div>
+                            </div>
+                            <h4 class="fw-bold mb-1">Bachelor of Computer Applications (BCA)</h4>
+                            <h6 class="text-secondary fw-semibold mb-2">Nirmala College, Muvattupuzha</h6>
+                        </div>
+
+                        <div
+                            class="edu-item p-4 glass-card rounded-4 shadow-sm position-relative border-left-secondary">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div class="edu-date badge bg-secondary text-white">Higher Secondary</div>
+                                <div class="fw-bold text-muted-custom small">Score: 94.5%</div>
+                            </div>
+                            <h4 class="fw-bold mb-1">12th Grade</h4>
+                            <h6 class="text-secondary fw-semibold mb-2">St. Mary's HSS, Murickassery</h6>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -372,53 +582,406 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <h1 class="contact-heading">Contact details</h1>
-        <p class="contact-message">
-            I am an MCA student passionate about web development and software technologies.<br>
-            Collaborate, discuss a project, or just connect—feel free to contact me any time!<br>
-            You can message me via email or reach out on
-            <a href="https://www.linkedin.com/in/meenadevi-ravikumar-816831250" target="_blank"
-                rel="noopener noreferrer">LinkedIn</a>
-        </p>
+    <section id="contact" class="contact-section py-section">
+        <div class="container reveal-up">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="divider mx-auto"></div>
+                <p class="section-subtitle mt-3">Let's collaborate on your next project or discuss opportunities.</p>
+            </div>
 
-        <form action="https://formspree.io/f/xovyonar" method="POST" class="contact-form">
-            <input type="text" name="name" placeholder="Name" required class="form-input">
-            <input type="email" name="email" placeholder="Email" required class="form-input">
-            <textarea name="message" placeholder="Project details" rows="6" required class="form-textarea"></textarea>
-            <button type="submit" class="submit-btn">Submit</button>
-        </form>
+            <div class="row justify-content-center g-5">
+                <div class="col-lg-5">
+                    <div class="contact-info h-100">
+                        <h3 class="fw-bold mb-4">Contact Information</h3>
+                        <p class="text-muted-custom mb-5">I am an MCA student passionate about software development and
+                            AI. Feel free to contact me anytime!</p>
 
-        <div class="social-bar">
-            <!-- <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="https://pinterest.com/" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-pinterest-p"></i> -->
-            </a>
-            <a href="https://www.instagram.com/_me_e_na__?igsh=YTgxZHo4ZzN6cmVl" target="_blank"
-                rel="noopener noreferrer">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://github.com/Meenadevi103/" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/meenadevi-ravikumar-816831250" target="_blank"
-                rel="noopener noreferrer">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="mailto:meenadeviravikumar@gmail.com">
-                <i class="fas fa-envelope"></i>
-            </a>
-            <a href="tel:9447873272">
-                <i class="fas fa-phone"></i>
-            </a>
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="contact-icon-box bg-primary-soft text-primary rounded-circle d-flex align-items-center justify-content-center me-3 shadow-sm"
+                                style="width:50px; height:50px;">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-0">Email</h6>
+                                <a href="mailto:meenadeviravikumar@gmail.com"
+                                    class="text-muted-custom text-decoration-none hover-primary">meenadeviravikumar@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="contact-icon-box bg-primary-soft text-primary rounded-circle d-flex align-items-center justify-content-center me-3 shadow-sm"
+                                style="width:50px; height:50px;">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-0">LinkedIn</h6>
+                                <a href="https://www.linkedin.com/in/meenadeviravikumar/?skipRedirect=true"
+                                    target="_blank"
+                                    class="text-muted-custom text-decoration-none hover-primary">linkedin.com/in/meenadeviravikumar</a>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center">
+                            <div class="contact-icon-box bg-primary-soft text-primary rounded-circle d-flex align-items-center justify-content-center me-3 shadow-sm"
+                                style="width:50px; height:50px;">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-0">GitHub</h6>
+                                <a href="https://github.com/Meenadevi103" target="_blank"
+                                    class="text-muted-custom text-decoration-none hover-primary">github.com/Meenadevi103</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="glass-card p-4 p-md-5 rounded-4 shadow-sm">
+                        <form action="https://formspree.io/f/xovyonar" method="POST" class="contact-form">
+                            <div class="mb-3">
+                                <label for="name" class="form-label fw-semibold">Name</label>
+                                <input type="text" name="name" id="name" class="form-control custom-input"
+                                    placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label fw-semibold">Email</label>
+                                <input type="email" name="email" id="email" class="form-control custom-input"
+                                    placeholder="your@email.com" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="form-label fw-semibold">Message</label>
+                                <textarea name="message" id="message" rows="5" class="form-control custom-input"
+                                    placeholder="How can I help you?" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary-custom w-100 py-3 fw-bold">Send Message <i
+                                    class="fas fa-paper-plane ms-2"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Footer -->
+    <footer class="footer py-4 text-center mt-5">
+        <div class="container">
+            <div class="footer-social d-flex justify-content-center gap-3 mb-3">
+                <a href="https://github.com/Meenadevi103" target="_blank" class="footer-icon"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/meenadeviravikumar/?skipRedirect=true" target="_blank"
+                    class="footer-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:meenadeviravikumar@gmail.com" class="footer-icon"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.instagram.com/_me_e_na__?igsh=YTgxZHo4ZzN6cmVl" target="_blank"
+                    class="footer-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="text-muted-custom mb-1">Built with passion for software development, AI, and continuous learning.
+            </p>
+            <p class="text-muted-custom small mb-0">&copy; 2026 Meenadevi Ravikumar. All rights reserved.</p>
+        </div>
+    </footer>
 
+    <!-- Project Modals -->
+
+    <!-- Modal 1: AI Desktop Assistant -->
+    <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content custom-modal">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close custom-btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 p-md-5 pt-0">
+                    <div class="text-center mb-4">
+                        <div class="modal-icon-wrapper gradient-bg-1 mx-auto mb-3">
+                            <i class="fas fa-robot text-white fs-1"></i>
+                        </div>
+                        <h2 class="fw-bold" id="projectModal1Label">AI-Powered Desktop Assistant</h2>
+                        <span class="badge bg-primary-soft text-primary px-3 py-2 rounded-pill mt-2">AI / Desktop
+                            App</span>
+                    </div>
+                    <div class="mb-4">
+                        <h5 class="fw-bold mb-3">Overview</h5>
+                        <p class="text-muted-custom">An AI-powered desktop assistant designed to provide voice-driven
+                            and intelligent desktop interactions. It features a modular architecture integrating LLMs
+                            and local tools for automation.</p>
+                        <h5 class="fw-bold mb-3 mt-4">Problem Solved</h5>
+                        <p class="text-muted-custom">Reduces context switching and streamlines desktop tasks by offering
+                            a conversational, voice-enabled interface for executing system commands and fetching
+                            information natively.</p>
+                    </div>
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-6">
+                            <h5 class="fw-bold mb-3">Key Features</h5>
+                            <ul class="text-muted-custom small ps-3">
+                                <li>AI/LLM integration for smart responses</li>
+                                <li>Voice interaction and handling</li>
+                                <li>Desktop automation & tool execution</li>
+                                <li>Interactive assistant UI</li>
+                                <li>Modular agent/tool architecture</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold mb-3">Tech Stack</h5>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">LLMs</span>
+                                <span class="tech-badge">Voice APIs</span>
+                                <span class="tech-badge">UI Framework</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4 pt-3 border-top-custom">
+                        <a href="https://github.com/Meenadevi103/Desktop_Assistant_ai" target="_blank"
+                            class="btn btn-primary-custom px-4 py-2"><i class="fab fa-github ms-2"></i> View on
+                            GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: QBank -->
+    <div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModal2Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content custom-modal">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close custom-btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 p-md-5 pt-0">
+                    <div class="text-center mb-4">
+                        <div class="modal-icon-wrapper gradient-bg-2 mx-auto mb-3">
+                            <i class="fas fa-book text-white fs-1"></i>
+                        </div>
+                        <h2 class="fw-bold" id="projectModal2Label">QBank – Question Paper Management System</h2>
+                        <span class="badge bg-primary-soft text-primary px-3 py-2 rounded-pill mt-2">Full-Stack /
+                            Django</span>
+                    </div>
+                    <div class="mb-4">
+                        <h5 class="fw-bold mb-3">Overview</h5>
+                        <p class="text-muted-custom">A full-stack system designed for academic institutions to manage,
+                            search, and analyze previous-year question papers. It includes advanced PDF processing and
+                            data analytics capabilities.</p>
+                        <h5 class="fw-bold mb-3 mt-4">Problem Solved</h5>
+                        <p class="text-muted-custom">Eliminates the chaotic manual management of past exam papers.
+                            Provides students and faculty with instant search, structural insights, and automated trend
+                            analysis of frequently asked questions.</p>
+                    </div>
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-6">
+                            <h5 class="fw-bold mb-3">Key Features</h5>
+                            <ul class="text-muted-custom small ps-3">
+                                <li>Student & Admin portals</li>
+                                <li>Global search & Department organization</li>
+                                <li>PDF processing & Keyword extraction</li>
+                                <li>Frequency & Marks distribution analysis</li>
+                                <li>Analysis report generation</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold mb-3">Tech Stack</h5>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Django</span>
+                                <span class="tech-badge">PostgreSQL/SQLite</span>
+                                <span class="tech-badge">Bootstrap 5</span>
+                                <span class="tech-badge">Chart.js</span>
+                                <span class="tech-badge">PyMuPDF</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4 pt-3 border-top-custom">
+                        <a href="https://github.com/Meenadevi103/Qbank" target="_blank"
+                            class="btn btn-primary-custom px-4 py-2"><i class="fab fa-github ms-2"></i> View on
+                            GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: E-Hospitality -->
+    <div class="modal fade" id="projectModal3" tabindex="-1" aria-labelledby="projectModal3Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content custom-modal">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close custom-btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 p-md-5 pt-0">
+                    <div class="text-center mb-4">
+                        <div class="modal-icon-wrapper gradient-bg-3 mx-auto mb-3">
+                            <i class="fas fa-hospital text-white fs-1"></i>
+                        </div>
+                        <h2 class="fw-bold" id="projectModal3Label">E-Hospitality – Hospital Management System</h2>
+                        <span class="badge bg-primary-soft text-primary px-3 py-2 rounded-pill mt-2">Full-Stack / Web
+                            App</span>
+                    </div>
+                    <div class="mb-4">
+                        <h5 class="fw-bold mb-3">Overview</h5>
+                        <p class="text-muted-custom">A full-stack web application that connects patients, doctors, and
+                            administrators through a centralized healthcare platform, facilitating seamless appointment
+                            booking and hospital management.</p>
+                        <h5 class="fw-bold mb-3 mt-4">Problem Solved</h5>
+                        <p class="text-muted-custom">Digitizes clinic management by centralizing records, automating
+                            appointment scheduling, and providing dedicated role-based dashboards to improve healthcare
+                            delivery efficiency.</p>
+                    </div>
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-6">
+                            <h5 class="fw-bold mb-3">Key Features</h5>
+                            <ul class="text-muted-custom small ps-3">
+                                <li>Secure role-based authentication</li>
+                                <li>Patient, Doctor, and Admin dashboards</li>
+                                <li>Appointment booking system</li>
+                                <li>Hospital department management</li>
+                                <li>User and appointment monitoring</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold mb-3">Tech Stack</h5>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Django</span>
+                                <span class="tech-badge">SQLite</span>
+                                <span class="tech-badge">HTML/CSS/JS</span>
+                                <span class="tech-badge">Bootstrap 5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4 pt-3 border-top-custom d-flex justify-content-center gap-3">
+                        <a href="https://github.com/Meenadevi103/ehospital" target="_blank"
+                            class="btn btn-outline-custom px-4 py-2"><i class="fab fa-github ms-2"></i> View on
+                            GitHub</a>
+                        <a href="https://ehospital-9abu.onrender.com" target="_blank"
+                            class="btn btn-primary-custom px-4 py-2"><i class="fas fa-external-link-alt ms-2"></i> Live
+                            Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4: AI Web Assistant -->
+    <div class="modal fade" id="projectModal4" tabindex="-1" aria-labelledby="projectModal4Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content custom-modal">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close custom-btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 p-md-5 pt-0">
+                    <div class="text-center mb-4">
+                        <div class="modal-icon-wrapper gradient-bg-4 mx-auto mb-3">
+                            <i class="fas fa-comments text-white fs-1"></i>
+                        </div>
+                        <h2 class="fw-bold" id="projectModal4Label">AI-Powered Web Assistant</h2>
+                        <span class="badge bg-primary-soft text-primary px-3 py-2 rounded-pill mt-2">AI / Flask / PyPI
+                            Package</span>
+                    </div>
+                    <div class="mb-4">
+                        <h5 class="fw-bold mb-3">Overview</h5>
+                        <p class="text-muted-custom">An intelligent web-based conversational assistant built using Flask
+                            and Google Gemini AI. The core logic is abstracted into a custom reusable Python package
+                            published on PyPI.</p>
+                        <h5 class="fw-bold mb-3 mt-4">Problem Solved</h5>
+                        <p class="text-muted-custom">Demonstrates seamless API integration and package distribution by
+                            creating a scalable web conversational interface that can be easily installed and customized
+                            by other developers.</p>
+                    </div>
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-6">
+                            <h5 class="fw-bold mb-3">Key Features</h5>
+                            <ul class="text-muted-custom small ps-3">
+                                <li>Conversational AI via Google Gemini</li>
+                                <li>Responsive chat interface with history</li>
+                                <li>Custom PyPI Python package creation</li>
+                                <li>Flask backend API integration</li>
+                                <li>Fallback mechanisms & error handling</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold mb-3">Tech Stack</h5>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Flask</span>
+                                <span class="tech-badge">Google Gemini AI</span>
+                                <span class="tech-badge">PyPI (setuptools, twine)</span>
+                                <span class="tech-badge">Jinja2 & SweetAlert</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4 pt-3 border-top-custom">
+                        <a href="https://github.com/Meenadevi103/AI-Powered-Web-Assistant" target="_blank"
+                            class="btn btn-primary-custom px-4 py-2"><i class="fab fa-github ms-2"></i> View on
+                            GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 5: Mini Mart -->
+    <div class="modal fade" id="projectModal5" tabindex="-1" aria-labelledby="projectModal5Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content custom-modal">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close custom-btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 p-md-5 pt-0">
+                    <div class="text-center mb-4">
+                        <div class="modal-img-wrapper mx-auto mb-3 rounded-4 overflow-hidden shadow-sm"
+                            style="height: 150px; width: 100%; max-width: 300px;">
+                            <img src="{{ url_for('static', filename='assets/pr2.jpg') }}" alt="Mini Mart"
+                                class="img-fluid w-100 h-100 object-fit-cover">
+                        </div>
+                        <h2 class="fw-bold" id="projectModal5Label">Mini Mart</h2>
+                        <span class="badge bg-primary-soft text-primary px-3 py-2 rounded-pill mt-2">Full-Stack /
+                            B2B</span>
+                    </div>
+                    <div class="mb-4">
+                        <h5 class="fw-bold mb-3">Overview</h5>
+                        <p class="text-muted-custom">A B2B application that enables efficient interaction between local
+                            sellers and buyers, built to streamline operations and inventory access.</p>
+                        <h5 class="fw-bold mb-3 mt-4">Problem Solved</h5>
+                        <p class="text-muted-custom">Bridges the gap between local wholesalers and retailers by offering
+                            a dedicated platform for bulk ordering, digital inventory tracking, and streamlined B2B
+                            transactions.</p>
+                    </div>
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-6">
+                            <h5 class="fw-bold mb-3">Key Features</h5>
+                            <ul class="text-muted-custom small ps-3">
+                                <li>B2B e-commerce platform</li>
+                                <li>Seller and Buyer roles</li>
+                                <li>Product catalog and management</li>
+                                <li>Secure API endpoints</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold mb-3">Tech Stack</h5>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Django</span>
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4 pt-3 border-top-custom">
+                        <a href="https://github.com/Meenadevi103/Mini_Mart" target="_blank"
+                            class="btn btn-primary-custom px-4 py-2"><i class="fab fa-github ms-2"></i> View on
+                            GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
